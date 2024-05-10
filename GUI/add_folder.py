@@ -1,7 +1,7 @@
 from tkinter import *
-from tkinter import ttk
+from tkinter.messagebox import askyesno, showerror, showinfo
+
 from database import db
-from tkinter.messagebox import askyesno, showinfo, showerror
 from Lib import action
 
 
@@ -10,12 +10,10 @@ class add_folder_gui:
         self.root = root
         self.screenWidth = self.root.winfo_screenwidth()
         self.screenHeight = self.root.winfo_screenheight()
-        
+
         w = self.screenWidth/108
         h = self.screenHeight/100
         frame_pos = self.screenHeight-h*42-50
-
-
 
         self.del_icon = PhotoImage(file="images/delete.png")
         self.add_icon = PhotoImage(file="images/add.png")
@@ -23,8 +21,9 @@ class add_folder_gui:
         self.var_new_folderName = StringVar()
         self.var_new_folder_ext = StringVar()
 
-        self.frame = Frame(self.root,bd=2 , relief=RIDGE)
-        self.frame.place(x=self.screenWidth-w*35-50, y=frame_pos, width=w*35, height=h*25)
+        self.frame = Frame(self.root, bd=2, relief=RIDGE)
+        self.frame.place(x=self.screenWidth-w*35-50,
+                         y=frame_pos, width=w*35, height=h*25)
         box_start = self.screenWidth-w*35-50
         lbl_add_ext = Label(
             self.root,
@@ -33,7 +32,6 @@ class add_folder_gui:
             bg='#023548',
             fg="white"
         ).place(x=box_start, y=frame_pos, width=w*35, height=40)
-
 
         lbl_add_new_folder = Label(
             self.root,
@@ -62,8 +60,6 @@ class add_folder_gui:
             justify=CENTER,
             textvariable=self.var_new_folder_ext
         ).place(x=box_start+w*16, y=frame_pos+h*12, height=30, width=w*15)
-
- 
 
         self.Add_Folder = Button(
             self.root,

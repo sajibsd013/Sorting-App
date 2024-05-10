@@ -1,31 +1,5 @@
 import sqlite3
-from tkinter.messagebox import askyesno, showinfo, showerror
-
-# Comments
-    # conn = sqlite3.connect('sorting_app.db')
-    # cursor = conn.cursor()
-
-    # UBDATE_EXT = """
-    #     UPDATE Extentions
-    #     SET FolderName = 'documents'
-    #     WHERE extention = '.xlsx'
-    # """
-
-    # INSERT_VALUSE = "INSERT INTO Extentions VALUES('.pdf','documents')"
-    # cursor.execute(INSERT_VALUSE)
-    # cursor.execute('SELECT * FROM Extentions')
-
-    # print(cursor.fetchall())
-
-
-    # create_table = """
-    #     CREATE TABLE Extentions(
-    #         extention varchar(255),
-    #         FolderName varchar(255),
-    #         PRIMARY KEY (extention)
-    #     )
-    # """
-    # cursor.execute(create_table)
+from tkinter.messagebox import askyesno, showerror, showinfo
 
 
 def execute_sql(sql):
@@ -86,5 +60,3 @@ def remove_ext_arr(ext_arr, folder):
     for ext in ext_arr:
         if ext.startswith('.'):
             remove_ext(ext, folder)
-
-
